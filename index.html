@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <link rel="shortcut icon" href="logo.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hint-copy">
+        Пароль успешно скопирован
+    </div>
+    <div class="wrapper">
+        <h1>Генератор паролей</h1>
+        <div class="input-block">
+            <input type="text" value="" class="password">
+            <button class="copy-pass">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="copy-icon"><g><path xmlns="http://www.w3.org/2000/svg" d="m186.667969 416c-49.984375 0-90.667969-40.683594-90.667969-90.667969v-218.664062h-37.332031c-32.363281 0-58.667969 26.300781-58.667969 58.664062v288c0 32.363281 26.304688 58.667969 58.667969 58.667969h266.664062c32.363281 0 58.667969-26.304688 58.667969-58.667969v-37.332031zm0 0" fill="" data-original="#000000"/><path xmlns="http://www.w3.org/2000/svg" d="m469.332031 58.667969c0-32.40625-26.261719-58.667969-58.664062-58.667969h-224c-32.40625 0-58.667969 26.261719-58.667969 58.667969v266.664062c0 32.40625 26.261719 58.667969 58.667969 58.667969h224c32.402343 0 58.664062-26.261719 58.664062-58.667969zm0 0" fill="" data-original="#000000"/></g></svg>
+            </button>
+        </div>
+        <button class="second">Сгенерировать пароль</button>
+        <div class="settings">
+            <h2>Настройки</h2>
+            <div class="symbols">
+                <div class="symbols-item">
+                    <div class="switch">
+                        <input id="english-symbols" type="checkbox" class="english lang">
+                        <label for="english-symbols" class="label-lang"></label>
+                    </div>
+                    <div class="symbols-item__title">Английские символы</div>
+                </div>
+                <div class="symbols-item">
+                    <div class="switch">
+                        <input id="russian-symbols" type="checkbox" class="russian lang">
+                        <label for="russian-symbols" class="label-lang"></label>
+                    </div>
+                    <div class="symbols-item__title">Русские символы</div>
+                </div>
+                <div class="symbols-item">
+                    <div class="switch">
+                        <input id="upper-symbols" type="checkbox" class="upper lang">
+                        <label for="upper-symbols" class="label-lang lang-edit"></label>
+                    </div>
+                    <div class="symbols-item__title">Символы в верхнем регистре</div>
+                </div>
+                <div class="symbols-item">
+                    <div class="switch">
+                        <input id="optional-symbols" type="checkbox" class="optional lang">
+                        <label for="optional-symbols" class="label-lang lang-edit"></label>
+                    </div>
+                    <div class="symbols-item__title">Специальные символы(%?*№...)</div>
+                </div>
+            </div>
+            <button class="open-add-settings">Дополнительно</button>
+            <div class="length-pass">
+                <button class="length-btn btn-up">
+                    <img src="arrow.svg" alt="arrow up" class="length-btn__img length-img-up">
+                </button>
+                <input type="text" value="8" class="length" maxlength="3">
+                <button class="length-btn btn-down">
+                    <img src="arrow.svg" alt="arrow down" class="length-btn__img length-img-down">
+                </button>
+            </div>
+        </div>
+        <button class="first generate">Сгенерировать пароль</button>
+    </div>
+    <div class="overflow"></div>
+    <div class="add-settings">
+        <div class="add-settings-title">
+            <div class="add-settings__main">Введите символы, из которых будет состоять ваш пароль</div>
+            <button class="spoiler-add-title">Примечание</button>
+                <div class="spoiler-add">
+                    <div class="add-settings__second">
+                        (Ваш пароль будет генерироваться только из символов, написанных вами, если не хотите такое поведение то просто оставьте поле ввода этого окна пустым)
+                        Настройки пароля также не будут доступны при использовании своих символов
+                    </div>
+                </div>
+        </div>
+        <div class="input-add-block">
+            <input type="text" class="add-set-input" value="">
+            <button class="submit-add-symbols"></button>
+        </div>
+    </div>
+    <div class="error">
+        <div class="error-title">
+            Неккоректные данные
+        </div>
+        <div class="error-text">
+            В поле ввода количества символов пароля, возможно ввести минимум 4 или же максимум 100 (иные значения не поддерживаются)
+        </div>
+        <button class="close-error">Хорошо</button>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
